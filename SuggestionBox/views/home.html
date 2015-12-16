@@ -1,4 +1,4 @@
-<div class="suggestion" ng-repeat="post in suggestions.posts | orderBy: '-upvotes' ">
+<div class="suggestion" ng-repeat="post in suggestions.posts | orderBy: '-upvotes' track by $index">
     <div class="row">
         <div class="col-md-6 col-md-offset-3">
             <div class="container">
@@ -6,7 +6,7 @@
                 <p>
                     <span class="glyphicon glyphicon-plus-sign" ng-click="upVote(post)"></span>
                     Upvotes: {{post.upvotes}} |
-                    <a href="#/suggestion/{{ $index }}"><span>Comment</span></a>
+                    <a href="#/suggestion/{{ post.id }}"><span>Comment</span></a>
                 </p>
             </div>
         </div>

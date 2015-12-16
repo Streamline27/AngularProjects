@@ -8,9 +8,11 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
 
         if(!$scope.title || $scope.title === "") return;
 
+
         var suggestion = {
           title: $scope.title,
           upvotes: 0,
+          id: suggestions.posts.length,
           comments: []
         };
 
