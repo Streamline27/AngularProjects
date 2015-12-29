@@ -3,11 +3,11 @@
  */
 app.controller('HomeController', ['$scope', 'suggestions', function($scope, suggestions){
     $scope.helloWorld  = "HelloWorld";
+
     $scope.suggestions = suggestions;
+
     $scope.addSuggestion = function(){
-
         if(!$scope.title || $scope.title === "") return;
-
 
         var suggestion = {
           title: $scope.title,
@@ -15,12 +15,14 @@ app.controller('HomeController', ['$scope', 'suggestions', function($scope, sugg
           id: suggestions.posts.length,
           comments: []
         };
+        $scope.title = "";
 
         suggestions.posts.push(suggestion);
-        $scope.title = "";
     };
 
     $scope.upVote = function(post){
         post.upvotes++;
-    }
+    };
+
+
 }]);
